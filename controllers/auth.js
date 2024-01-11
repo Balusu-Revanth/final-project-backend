@@ -1,7 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const client = require("../configs/db");
-require("dotenv").config();
 
 // const temporaryData = [
 //         {
