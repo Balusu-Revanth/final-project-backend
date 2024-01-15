@@ -37,6 +37,29 @@ exports.getAllNotes = (req, res) => {
         });
 };
 
+exports.getNoteById = (req, res) => {
+    const noteId = req.noteId;
+    client
+        .query(`SELECT * FROM notes WHERE noteid = '${noteId}';`)
+        .then((data) => {
+            const noteData = data.rows;
+            const filterData = noteData.map((note) => {
+                return {
+                    noteId: note.noteid,
+                    heading: note.heading,
+                    content: note.content,
+                };
+            });
+            res.status(200).json({
+                message: "Success",
+                data: filterData,
+            });
+        })
+        .catch((err) => {
+            res.status(500).json({ message: "Database error occurred" });
+        });
+};
+
 exports.updateNote = (req, res) => {
     const noteId = req.noteId;
     const { heading, content } = req.body;
