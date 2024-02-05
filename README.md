@@ -1,4 +1,4 @@
-# Backend ReadMe - Nice Note Taker
+# Backend - Nice Note Taker
 
 ## Project Overview
 Nice Note Taker Backend serves as the robust foundation for the note-taking application, employing the MVC (Model-View-Controller) architecture. Developed using Node.js and Express.js, the backend ensures secure user authentication through JWT and password hashing using bcrypt. PostgreSQL is used for efficient data storage and retrieval.
